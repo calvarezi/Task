@@ -10,8 +10,12 @@ router = routers.DefaultRouter()
 router.register('tasks', TaskViewSet)
 
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path('taskss/', TaskViewSet.as_view({'get': 'list'}), name='task-list'),
-    path('tasks/<int:pk>/',TaskViewSet.as_view({'get': 'retrieve'}), name='task-detail'),
-]
+urlpatterns = router.urls
+
+
+
+# [
+#     path('', include(router.urls)),
+#     path('tasks/', TaskViewSet.as_view({'get': 'list'}), name='task-list'),
+#     path('tasks/<int:pk>/',TaskViewSet.as_view({'get': 'retrieve'}), name='task-detail'),
+# ]
